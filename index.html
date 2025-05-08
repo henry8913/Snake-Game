@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Snake Game</h1>
+            <div class="score-container">
+                <span>Score: </span>
+                <span id="score">0</span>
+            </div>
+        </div>
+        <canvas id="game" width="400" height="400"></canvas>
+        <div class="controls">
+            <button id="start-btn">Start Game</button>
+            <button id="reset-btn">Reset</button>
+            <div class="theme-control">
+                <label for="theme-selector">Tema:</label>
+                <select id="theme-selector">
+                    <option value="classic">Classico</option>
+                    <option value="neon">Neon</option>
+                    <option value="retro">Retro</option>
+                </select>
+            </div>
+        </div>
+        <div class="touch-controls">
+            <div class="touch-btn up" id="touch-up">↑</div>
+            <div class="touch-btn left" id="touch-left">←</div>
+            <div class="touch-btn right" id="touch-right">→</div>
+            <div class="touch-btn down" id="touch-down">↓</div>
+        </div>
+        <div class="instructions">
+            <h2>Come Giocare</h2>
+            <p>Usa le frecce direzionali per controllare il serpente.</p>
+            <p>Mangia il cibo per crescere e guadagnare punti.</p>
+            <p>Evita di colpire i muri o te stesso!</p>
+            <p>Raccogli i power-up per ottenere abilità speciali!</p>
+        </div>
+        <div class="high-scores">
+            <h2>Punteggi Migliori</h2>
+            <ol id="high-scores-list">
+                <!-- I punteggi migliori verranno inseriti qui dinamicamente -->
+            </ol>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
