@@ -306,3 +306,39 @@ select:focus {
         display: none;
     }
 }
+
+/* Power-up legend styles */
+.power-up-legend {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.power-up-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.power-up-icon {
+    width: 20px;
+    height: 20px;
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%,
+        79% 91%, 50% 70%, 21% 91%, 32% 57%,
+        2% 35%, 39% 35%
+    );
+}
+
+.power-up-icon.speed {
+    background-color: #FFC107;
+}
+
+.power-up-icon.slow {
+    background-color: #2196F3;
+}
+
+.power-up-icon.invincible {
+    background-color: #9C27B0;
+}

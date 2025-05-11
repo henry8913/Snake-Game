@@ -3,6 +3,8 @@
 ## Panoramica
 Benvenuto nel nostro gioco Snake moderno e interattivo! Questo progetto è una versione migliorata del classico gioco Snake con grafica accattivante, effetti visivi, power-up e supporto per dispositivi mobili.
 
+🌐 **Gioca Online**: [https://henry8913.github.io/Snake-Game/](https://henry8913.github.io/Snake-Game/)
+
 <img src="img/cover.jpg" alt="Snake Game" width="100%" />
 
 ## 🎮 Caratteristiche Principali
@@ -24,9 +26,12 @@ Raccogli power-up speciali per ottenere abilità temporanee:
 - **Rallentamento** (blu): Diminuisce la velocità del serpente
 - **Invincibilità** (viola): Protegge temporaneamente dalle collisioni
 
+Ogni power-up è rappresentato da un'icona distintiva nel gioco e ha un indicatore visivo che mostra la durata dell'effetto attivo.
+
 ### 📱 Controlli Touch
 - Supporto completo per dispositivi mobili
 - Controlli touch intuitivi con pulsanti direzionali
+- Joystick virtuale per un controllo più preciso
 - Supporto per gesti swipe sul canvas di gioco
 
 ### 🏆 Sistema di Punteggi
@@ -47,9 +52,9 @@ Raccogli power-up speciali per ottenere abilità temporanee:
 
 ## 🚀 Come Giocare
 
-1. Apri il file `index.html` nel tuo browser preferito
+1. Gioca online su [https://henry8913.github.io/Snake-Game/](https://henry8913.github.io/Snake-Game/) o apri il file `index.html` nel tuo browser preferito
 2. Premi il pulsante "Start Game" per iniziare
-3. Usa le frecce direzionali sulla tastiera o i controlli touch per muovere il serpente
+3. Usa le frecce direzionali sulla tastiera, i controlli touch o il joystick virtuale per muovere il serpente
 4. Raccogli il cibo (cerchi rossi) per aumentare il punteggio
 5. Raccogli i power-up (stelle colorate) per ottenere abilità speciali
 6. Evita di colpire i bordi o il corpo del serpente
@@ -69,7 +74,9 @@ Raccogli power-up speciali per ottenere abilità temporanee:
 Snake-Game/
 ├── index.html      # Struttura HTML principale
 ├── style.css       # Stili CSS e animazioni
+├── joystick.css    # Stili CSS per il joystick virtuale
 ├── game.js         # Logica di gioco JavaScript
+├── joystick.js     # Logica JavaScript per il joystick virtuale
 └── README.md       # Documentazione del progetto
 ```
 
@@ -81,6 +88,8 @@ Snake-Game/
 - **Gestione Stati**: Sistema di gestione degli stati di gioco (avvio, pausa, reset)
 - **Rendering Ottimizzato**: Rendering efficiente per prestazioni fluide
 - **Adattamento Automatico**: Ridimensionamento automatico del canvas per diversi dispositivi
+- **Joystick Virtuale**: Controllo intuitivo per dispositivi touch con feedback visivo
+- **Indicatori di Power-Up**: Visualizzazione grafica della durata degli effetti attivi
 
 ## 🔮 Possibili Miglioramenti Futuri
 

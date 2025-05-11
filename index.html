@@ -4,7 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
+    
+    <!-- Meta tag per SEO -->
+    <meta name="description" content="Un gioco Snake moderno e interattivo con grafica accattivante, effetti visivi, power-up e supporto per dispositivi mobili.">
+    <meta name="keywords" content="snake game, gioco del serpente, giochi online, giochi html5, giochi javascript">
+    <meta name="author" content="Henry">
+    
+    <!-- Open Graph meta tag per social media -->
+    <meta property="og:title" content="Snake Game">
+    <meta property="og:description" content="Un gioco Snake moderno e interattivo con grafica accattivante, effetti visivi e power-up.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/henry8913/Snake-Game/refs/heads/main/img/cover.jpg">
+    <meta property="og:url" content="https://henry8913.github.io/Snake-Game/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card meta tag -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Snake Game">
+    <meta name="twitter:description" content="Un gioco Snake moderno e interattivo con grafica accattivante, effetti visivi e power-up.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/henry8913/Snake-Game/refs/heads/main/img/cover.jpg">
+    
+    <!-- Link canonico -->
+    <link rel="canonical" href="https://henry8913.github.io/Snake-Game/">
+    
     <link rel="stylesheet" href="style.css">
+    https://henry8913.github.io/Snake-Game/    <link rel="stylesheet" href="joystick.css">
 </head>
 <body>
     <div class="game-container">
@@ -34,12 +57,35 @@
             <div class="touch-btn right" id="touch-right">→</div>
             <div class="touch-btn down" id="touch-down">↓</div>
         </div>
+        
+        <!-- Joystick virtuale per controlli touch -->
+        <div class="joystick-container">
+            <div class="joystick-base">
+                <div class="joystick-thumb"></div>
+            </div>
+        </div>
         <div class="instructions">
             <h2>Come Giocare</h2>
             <p>Usa le frecce direzionali per controllare il serpente.</p>
             <p>Mangia il cibo per crescere e guadagnare punti.</p>
             <p>Evita di colpire i muri o te stesso!</p>
             <p>Raccogli i power-up per ottenere abilità speciali!</p>
+            
+            <h3>Power-Up</h3>
+            <div class="power-up-legend">
+                <div class="power-up-item">
+                    <div class="power-up-icon speed"></div>
+                    <span>Velocità: Aumenta la velocità del serpente</span>
+                </div>
+                <div class="power-up-item">
+                    <div class="power-up-icon slow"></div>
+                    <span>Rallentamento: Diminuisce la velocità del serpente</span>
+                </div>
+                <div class="power-up-item">
+                    <div class="power-up-icon invincible"></div>
+                    <span>Invincibilità: Protegge dalle collisioni</span>
+                </div>
+            </div>
         </div>
         <div class="high-scores">
             <h2>Punteggi Migliori</h2>
@@ -49,5 +95,6 @@
         </div>
     </div>
     <script src="game.js"></script>
+    <script src="joystick.js"></script>
 </body>
 </html>

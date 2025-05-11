@@ -1,3 +1,7 @@
+// Variabili globali per il controllo del joystick
+window.gameDirection = 'right';
+window.gameNextDirection = 'right';
+
 document.addEventListener('DOMContentLoaded', () => {
     // Game canvas setup
     const canvas = document.getElementById('game');
@@ -36,6 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let food = generateFood();
     let direction = 'right';
     let nextDirection = 'right';
+    
+    // Sincronizza le variabili globali con quelle locali
+    window.gameDirection = direction;
+    window.gameNextDirection = nextDirection;
     let score = 0;
     let gameSpeed = 150; // milliseconds
     let gameInterval;
@@ -192,6 +200,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function gameLoop() {
+        // Sincronizza la direzione locale con quella globale del joystick
+        nextDirection = window.gameNextDirection;
+        
+        // Update direction
+        direction = nextDirection;
+        window.gameDirection = direction;
+        
         moveSnake();
         if (checkCollision()) {
             gameOver();
@@ -567,6 +582,11 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.beginPath();
         ctx.arc(centerX - radius/3, centerY - radius/3, radius/4, 0, 2 * Math.PI);
         ctx.fill();
+        
+        // Draw active power-up indicator
+        if (powerUpActive) {
+            drawPowerUpIndicator();
+        }
     }
     
     // Helper function for rounded rectangles
@@ -668,6 +688,48 @@ document.addEventListener('DOMContentLoaded', () => {
     function getRandomPowerUpType() {
         const types = ['speed', 'slow', 'invincible'];
         return types[Math.floor(Math.random() * types.length)];
+    }
+    
+    // Draw power-up indicator to show active power-up and remaining time
+    function drawPowerUpIndicator() {
+        const padding = 10;
+        const indicatorHeight = 30;
+        const indicatorWidth = 150;
+        const x = padding;
+        const y = canvas.height - indicatorHeight - padding;
+        
+        // Draw background
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+        roundRect(ctx, x, y, indicatorWidth, indicatorHeight, 5);
+        
+        // Draw power-up name and icon
+        ctx.fillStyle = getPowerUpColor();
+        ctx.font = '16px Arial';
+        
+        let powerUpName = '';
+        switch(powerUpType) {
+            case 'speed':
+                powerUpName = 'Velocità';
+                break;
+            case 'slow':
+                powerUpName = 'Rallentamento';
+                break;
+            case 'invincible':
+                powerUpName = 'Invincibilità';
+                break;
+        }
+        
+        ctx.fillText(powerUpName, x + 10, y + 20);
+        
+        // Draw timer bar
+        const maxWidth = indicatorWidth - 20;
+        const timerWidth = (powerUpTimer / 200) * maxWidth;
+        
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        roundRect(ctx, x + 10, y + 22, maxWidth, 5, 2);
+        
+        ctx.fillStyle = getPowerUpColor();
+        roundRect(ctx, x + 10, y + 22, timerWidth, 5, 2);
     }
     
     function drawPowerUp() {
